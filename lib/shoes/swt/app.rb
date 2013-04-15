@@ -34,6 +34,7 @@ module Shoes
         @shell.open
         @started = true
         ::Swt.event_loop { ::Shoes::Swt.main_app.disposed? } if main_app?
+        exit
       end
 
       def quit
