@@ -27,6 +27,9 @@ module Shoes
         vb = @shell.getVerticalBar
         vb.setIncrement 10
         vb.addSelectionListener SelectionListener.new(self, vb)
+
+        @@number_of_windows ||= 0
+        @@number_of_windows += 1
       end
 
       def open
@@ -34,7 +37,8 @@ module Shoes
         @shell.open
         @started = true
         ::Swt.event_loop { ::Shoes::Swt.main_app.disposed? } if main_app?
-        exit
+        @@number_of_windows -= 1
+        exit if @@number_of_windows == 0
       end
 
       def quit
