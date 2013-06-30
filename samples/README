@@ -17,7 +17,9 @@ simple-sound.rb
 simple-stripes.rb
 simple-dialogs-outside.rb
 
+expert-definr-adjusted.rb
 expert-irb-adjusted.rb
+expert-othello-adjusted.rb
 expert-pong-adjusted.rb
 expert-tankspank-adjusted.rb
 

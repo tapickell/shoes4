@@ -1,7 +1,7 @@
 # The methods defined in this module/file are also available outside of the
 # Shoes.app block. So they are monkey patched onto the main object.
 # However they can also be used from the normal Shoes.app block.
-module Shoes
+class Shoes
   module BuiltinMethods
     def alert(message = '')
       Shoes::Dialog.new.alert message
@@ -38,7 +38,7 @@ module Shoes
     end
 
     def font(path = DEFAULT_TEXTBLOCK_FONT)
-      Shoes::Font.new(path).load_font
+      Shoes::Font.add_font(path)
     end
   end
 end
